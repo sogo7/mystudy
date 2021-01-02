@@ -4,26 +4,26 @@
     justify-content: space-between;
     height: 60px; 
 }
-.new {
+
+.post-index {
     text-align: center;
 }
-.create {
+
+.post-new {
     text-align: center;
 }
+
 ul > li{
     list-style: none;
     padding-bottom: 30px;
     font-size: 30px;
 }
 
-.meigen-show{
+.post-show-meigen {
     font-size: 30px;
+    text-align: center;
 }
 
-.top-right {
-    float: right;
-}
-
-.top-left {
-    float: left;
+footer {
+    text-align: center;
 }

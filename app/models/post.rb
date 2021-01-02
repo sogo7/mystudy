@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-    validates :meigen, presence: true
+  validates :meigen, presence: true
 end

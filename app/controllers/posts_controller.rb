@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def index
     @posts = Post.all
   end
@@ -14,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-    redirect_to root_path
+      redirect_to root_path
     else
       render "new"
     end
@@ -28,9 +29,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to root_path
-      else
-        render "edit"
-      end
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -39,11 +40,9 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-
-
   private
-def post_params
-	params.require(:post).permit(:meigen)
-end
 
+    def post_params
+	    params.require(:post).permit(:meigen)
+    end
 end

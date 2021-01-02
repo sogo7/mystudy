@@ -1,13 +1,14 @@
-<main class="create">
-<%= form_for @post do |f| %>
-    <p class="meigen-form">
-        <%= f.text_field :meigen, placeholder: "君の名言は何だ！！" %>
-        <% if @post.errors.messages[:meigen].any? %>
-        <span><%= @post.errors.messages[:meigen][0] %></span>
-        <% end %>
-    </p>
-    <p class="meigen-create">
-	<%= f.submit %>
-</p>
-<% end %>
+<main class="post-new">
+    <%= form_for @post do |f| %>
+        <p class="meigen-form">
+            <%= f.text_field :meigen, placeholder: "君の名言は何だ！！" %>
+            <% if @post.errors.messages[:meigen].any? %>
+            <span><%= @post.errors.messages[:meigen][0] %></span>
+            <% end %>
+        </p>
+        
+        <p class="meigen-create">
+            <%= f.submit %>
+        </p>
+    <% end %>
 </main>
