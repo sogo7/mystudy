@@ -1,9 +1,4 @@
-<header>
-<div class="header-inner">
-<h2>
-<%= link_to "名言集", root_path %>
-</h2>
-</header>
+
 <h2>新規登録</h2>
 <%= form_for(@user, url: users_create_path) do |f| %>
     <%= f.label :名前 %>

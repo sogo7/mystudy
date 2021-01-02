@@ -1,11 +1,18 @@
 class ApplicationController < ActionController::Base
 
-    def sign_in(user)
-        remember_token = User.new_remember_token
-        cookies.permanent[:user_remember_token] = remember_token
-        user.update!(remember_token: User.encrypt(remember_token))
-        @current_user = user
+    def log_in(user)
+        session[:user_id] = user.id
     end
+    
+    def current_user
+        if session[:user_id]    
+        @current_user ||= User.find_by(id: session[:user_id])
+        pp @current_user
+        pp User.find_by(id: session[:user_id])
+        end
+    end
+
+
 
 
 
