@@ -1,14 +1,20 @@
 <main>
-    <h1 class= "post-index"><%= link_to "名言を叫べ！！", new_post_path %></h1>
+    <% if current_user %>
+        <h1 class= "post-index"><%= link_to "名言を叫べ！！", new_post_path %></h1>
 
-    <ul>
-        <% @posts.each do |post| %>
-            <li>
-                <%= link_to post.meigen, post_path(post) %>
-                <%= link_to "編集", edit_post_path(post) %>
-                <%= link_to "[X]", post_path(post), method: :delete, data: {confirm: "削除しますか?"}%>
-            </li>
-        <% end %>
-    </ul>
+        <ul>
+            <% @posts.each do |post| %>
+                <li>
+                    <%= link_to post.meigen, post_path(post) %>
+                    <%= link_to "編集", edit_post_path(post) %>
+                    <%= link_to "[X]", post_path(post), method: :delete, data: {confirm: "削除しますか?"}%>
+                </li>
+            <% end %>
+        </ul>
+    <% else %>
+        <div class="post-index">
+            <p>名言集を見るにはログインが必要です</p>
+        </div>    
+    <% end %>
 </main>
 
