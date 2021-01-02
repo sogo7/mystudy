@@ -17,8 +17,9 @@
   <%= link_to "名言集", root_path %>
   </h2>
   <h2>
-  <% if session[:user_id] %>
-      <%= session[:user_id] %>
+  <% if current_user %>
+      <%= current_user.name %>
+      <%= link_to "ログアウト", logout_path, method: :delete, data: { confirm: 'ログアウトしますか?' } %>
   <% else %>
       <%= link_to "ログイン", login_path %>
   <% end %>
