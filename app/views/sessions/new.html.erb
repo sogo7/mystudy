@@ -1,0 +1,15 @@
+<header>
+<div class="header-inner">
+<h2>
+<%= link_to "名言集", root_path %>
+</h2>
+</header>
+<h2>ログイン</h2>
+<%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :メールアドレス　%>
+    <%= f.email_field :email %>
+    <%= f.label :パスワード　%>
+    <%= f.password_field :password %>
+    <%= f.submit "ログイン" %>
+<% end %>
+<%= link_to "はじめての方はこちら", users_new_path %>

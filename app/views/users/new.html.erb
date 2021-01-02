@@ -1,0 +1,19 @@
+<header>
+<div class="header-inner">
+<h2>
+<%= link_to "名言集", root_path %>
+</h2>
+</header>
+<h2>新規登録</h2>
+<%= form_for(@user, url: users_create_path) do |f| %>
+    <%= f.label :名前 %>
+    <%= f.text_field :name %>
+    <%= f.label :メールアドレス %>
+    <%= f.email_field :email %>
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
+    <%= f.label :パスワード確認用%>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "登録" %>
+<% end %>
+<%= link_to "すでに登録済みの方はこちら", login_path %>

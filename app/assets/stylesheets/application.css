@@ -1,0 +1,29 @@
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px; 
+}
+.new {
+    text-align: center;
+}
+.create {
+    text-align: center;
+}
+ul > li{
+    list-style: none;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.meigen-show{
+    font-size: 30px;
+}
+
+.top-right {
+    float: right;
+}
+
+.top-left {
+    float: left;
+}
