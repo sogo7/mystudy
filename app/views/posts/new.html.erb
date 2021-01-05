@@ -3,7 +3,7 @@
         <p class="meigen-form">
             <%= f.text_field :meigen, placeholder: "君の名言は何だ！！" %>
             <% if @post.errors.messages[:meigen].any? %>
-            <span><%= @post.errors.messages[:meigen][0] %></span>
+                <span><%= @post.errors.messages[:meigen][0] %></span>
             <% end %>
         </p>
         

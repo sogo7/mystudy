@@ -5,7 +5,11 @@
         <ul>
             <% @posts.each do |post| %>
                 <li>
+                    <div><%= post.user.name %></div>
                     <%= link_to post.meigen, post_path(post) %>
+                    <div id="like-btn-<%= post.id %>">
+                        <%= render 'likes/like', post: post %>
+                    </div>
                     <%= link_to "編集", edit_post_path(post) %>
                     <%= link_to "[X]", post_path(post), method: :delete, data: {confirm: "削除しますか?"}%>
                 </li>

@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   get "/login",   to: "sessions#new"
   post "/login",  to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  
-  resources :posts 
+
+  resources :posts do
+    post "add", to: "likes#create"
+    delete "/add", to: "likes#destroy"
+  end
   resources :users
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
