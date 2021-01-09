@@ -1,9 +1,13 @@
 <% if post.liked_by?(current_user) %>
     <%= link_to(post_add_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}") do %>
-        <i class="fa-lg fas fa-heart icon-btn liked">いいね消す</i>
+        <i class="fas fa-heart icon-btn liked">
+            <%= post.likes.count %>
+        </i>
     <% end %>
 <% else %>
     <%= link_to(post_add_path(post), method: :post, remote: true, id: :"like-button-#{post.id}") do %>
-        <i class="fa-lg fas fa-heart icon-btn not-like">いいね</i>
+        <i class="far fa-heart icon-btn not-like">
+            <%= post.likes.count %>
+        </i>
     <% end %>
 <% end %>

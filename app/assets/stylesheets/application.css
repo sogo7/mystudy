@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+/* いいねアイコン */
+.fa-heart {
+    color: crimson;
+}
+
 .post-new {
     text-align: center;
 }
