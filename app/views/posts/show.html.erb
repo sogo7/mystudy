@@ -3,14 +3,22 @@
     <h2><%= @post.meigen %></h2>
 </div>
 
-<%= form_for @comments do |f| %>
-    <%= f.text_area :comment, size: "40x5" %>
-    <%= f.submit '送信', class: "btn-sm btn-primary" %>
+<%= form_for [@post, @comment] do |f| %>
+    <div class="show-comment">
+    <% if @comment.user_id == current_user %>
+        <%= f.text_area :comment, size: "50x5" %>
+        <%= f.submit '送信'%>
+    <% end %>
+    </div>
 <% end %>
 
 <% @comments.each do |comment| %>
-    <%= comment.user.name %>
-    <%= comment.comment %>
-    <%= link_to "削除", post_comment_path(post, comment), method: :delete %>
+    <div class="show-comment">
+        <%= comment.user.name %>
+        <%= comment.comment %>
+        <% if comment.user_id == current_user.id %>
+            <%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+        <% end %>
+    </div>
 <% end %>
 
