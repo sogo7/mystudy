@@ -11,8 +11,10 @@
                         <%= render "likes/like", post: post %>
                     </div>
                     <% if current_user.id == post.user.id %>
-                        <%= link_to "編集", edit_post_path(post) %>
-                        <%= link_to "[X]", post_path(post), method: :delete, data: {confirm: "削除しますか?"}%>
+                        <%= link_to "編集", edit_post_path(post), class: "btn btn-primary" %>
+                        <%= link_to post_path(post) , method: :delete, data: {confirm: "削除しますか?"} do %>
+                        <span class="bi bi-x-square-fill"></span>
+                        <% end %>
                     <% end %>
                 </li>
             <% end %>
