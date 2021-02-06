@@ -1,0 +1,42 @@
+@import 'bootstrap/scss/bootstrap';
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px; 
+}
+
+.post-index {
+    text-align: center;
+}
+
+/* いいねアイコン */
+.fa-heart {
+    color: crimson;
+}
+
+.post-new {
+    text-align: center;
+}
+
+ul > li{
+    list-style: none;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.post-show-meigen {
+    font-size: 30px;
+    text-align: center;
+}
+
+.show-comment {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding-top: 15px;
+}
