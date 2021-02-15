@@ -1,19 +1,19 @@
 <main>
     <% if current_user %>
-        <h1 class= "post-index"><%= link_to "名言を叫べ！！", new_post_path %></h1>
+        <h1 class= "post-index"><%= link_to "名言を叫べ！！", new_post_path, class:"link_layout"%></h1>
 
         <ul>
             <% @posts.each do |post| %>
                 <li>
                     <div><%= post.user.name %></div>
-                    <%= link_to post.meigen, post_path(post) %>
+                    <%= link_to post.meigen, post_path(post), class:"link_layout" %>
                     <div id="like-btn-<%= post.id %>">
                         <%= render "likes/like", post: post %>
                     </div>
                     <% if current_user.id == post.user.id %>
                         <%= link_to "編集", edit_post_path(post), class: "btn btn-primary" %>
-                        <%= link_to post_path(post) , method: :delete, data: {confirm: "削除しますか?"} do %>
-                        <span class="bi bi-x-square-fill"></span>
+                        <%= link_to post_path(post), method: :delete, data: {confirm: "削除しますか?"} do %>
+                            <i class="fas fa-times-circle"></i>
                         <% end %>
                     <% end %>
                 </li>
