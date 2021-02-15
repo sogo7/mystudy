@@ -15,14 +15,14 @@
   <header>
   <div class="header-inner">
   <h2>
-  <%= link_to "名言集", root_path %>
+  <%= link_to "名言集", root_path, class:"link_layout" %>
   </h2>
   <h2>
   <% if current_user %>
       <%= current_user.name %>
-      <%= link_to "ログアウト", logout_path, method: :delete, data: { confirm: 'ログアウトしますか?' } %>
+      <%= link_to "ログアウト", logout_path, method: :delete, data: { confirm: 'ログアウトしますか?' }, class:"link_layout" %>
   <% else %>
-      <%= link_to "ログイン", login_path %>
+      <%= link_to "ログイン", login_path, class:"link_layout" %>
   <% end %>
   </h2>
   </header>
